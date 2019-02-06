@@ -21,7 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
-
+  'GET /Rol/crearRelaciones': 'RolController.crearRelaciones',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
