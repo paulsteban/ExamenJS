@@ -9,6 +9,7 @@ import { RutaLoginComponent } from './Rutas/ruta-login/ruta-login.component';
 import { RutaRegistroComponent } from './Rutas/ruta-registro/ruta-registro.component';
 import { RutaGestionEventosComponent } from './Rutas/ruta-gestion-eventos/ruta-gestion-eventos.component';
 import { RutaEventoComponent } from './Rutas/ruta-evento/ruta-evento.component';
+import { RutaInicioComponent } from './Rutas/ruta-inicio/ruta-inicio.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RutaEventoComponent } from './Rutas/ruta-evento/ruta-evento.component';
     RutaLoginComponent,
     RutaRegistroComponent,
     RutaGestionEventosComponent,
-    RutaEventoComponent
+    RutaEventoComponent,
+    RutaInicioComponent
   ],
   imports: [
     BrowserModule,
