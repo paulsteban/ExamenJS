@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     // NOMBRE
     path: 'login',
+    pathMatch: 'full',
     component: RutaLoginComponent
     // COMPONENTE
   },
@@ -34,6 +35,7 @@ const routes: Routes = [
   },{
     // NOMBRE
     path: 'gestionusuarios',
+   
     component: RutaGestionUsuarioComponent,
     // COMPONENTE,
     children:[
