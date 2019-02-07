@@ -12,6 +12,8 @@ import { RutaInicioComponent } from './Rutas/ruta-inicio/ruta-inicio.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
+import { LoginComponenteComponent } from './Componentes/login-componente/login-componente.component';
+import {AuthServiceService} from "./Servicios/auth-service.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import {TableModule} from 'primeng/table';
     RutaRegistroComponent,
     RutaGestionEventosComponent,
     RutaEventoComponent,
-    RutaInicioComponent
+    RutaInicioComponent,
+    LoginComponenteComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import {TableModule} from 'primeng/table';
     TableModule
 
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
