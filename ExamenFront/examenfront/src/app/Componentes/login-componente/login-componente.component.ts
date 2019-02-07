@@ -14,21 +14,15 @@ export class LoginComponenteComponent implements OnInit {
     password: ''
   };
 usuarios = [];
+helado = [];
   constructor(private readonly _authService: AuthServiceService) { }
 
   ngOnInit() {
-    const convenios$ = this.
-    _authService.obtenertodosUsuarios();
-    convenios$.subscribe((convenios: Usuario[]) => {
-      console.log(convenios);
-      this.usuarios = convenios.map((valuex,indice,convenios)=>
-      {let prueba =valuex.roles[0];
-         console.log(valuex.roles[0].id);
-        return prueba})
+    this.usuarios = this._authService.obtenertodosUsuarios();
 
-    });
-    console.log(this.usuarios)
-  }
+     
+       
+     }
   login() {
 
     const respuestaLogin$ = this._authService
@@ -41,7 +35,9 @@ usuarios = [];
       .subscribe(
         (raza) => {
           this._authService.usuario = raza;
+
           console.log(raza);
+          console.log(this._authService.usuario)
         },
         (error) => {
           console.error(error);
@@ -50,5 +46,6 @@ usuarios = [];
 
   }
 
+  
 
 }

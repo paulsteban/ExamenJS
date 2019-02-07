@@ -9,13 +9,7 @@ export class AuthServiceService {
   usuario: any = {
 
   };
-  roles = [
-
-    {
-      id: 2,
-      nombre: 'Usuario'
-    }
-  ];
+  UsuariosTotales = [];
   constructor(private readonly _httpClient: HttpClient) { }
   login(nombre: string,
         password: string): Observable<Usuario> {
@@ -31,10 +25,50 @@ export class AuthServiceService {
 
   }
   obtenertodosUsuarios() {
+    const convenios$ = this._httpClient.get(environment.url + '/Usuario').pipe(map(r => <Usuario[]> r));
+    convenios$.subscribe((convenios: Usuario[]) => {
+      this.UsuariosTotales=convenios;  
+      console.log(this.UsuariosTotales)  
+    });
+    return this.UsuariosTotales;
+   
+  }
+  islogin(): boolean {
+    let blnUsuario = false;
+    
 
-    return this._httpClient.get(environment.url + '/Usuario').pipe(map(r => <Usuario[]> r));
+if((Object.keys(this.usuario).length) > 0){
+  blnUsuario = true;
+}else{
+  console.log("no logeado")
+}
+
+    return blnUsuario;
   }
+
   esAdministrador(): boolean {
-    return this.roles.some((rol) => rol.id === 1);
+    let Aux = false;
+    
+      if(this.islogin()){
+        const helado = this.UsuariosTotales.forEach((valuex)=>{if ((valuex.nombre ===Object.values(this.usuario)[3] && valuex.roles[0].nombre ==="Administrador" )){
+          return Aux = true;
+        console.log(1)
+        }
+     
+      });
+
+      }else
+      
+      { 
+        Aux = false
+        console.log(2)
+      
+      }
+
+     
+ 
+  
+    return Aux;
   }
+  
 }

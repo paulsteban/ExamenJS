@@ -14,6 +14,8 @@ import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import { LoginComponenteComponent } from './Componentes/login-componente/login-componente.component';
 import {AuthServiceService} from "./Servicios/auth-service.service";
+import { IsLogin } from './Servicios/Guards/is-login';
+import { EsAdministrador } from './Servicios/Guards/es-administrador';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import {AuthServiceService} from "./Servicios/auth-service.service";
     TableModule
 
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService,IsLogin,EsAdministrador],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

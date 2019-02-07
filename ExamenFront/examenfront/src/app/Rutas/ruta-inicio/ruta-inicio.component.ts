@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from 'src/app/Servicios/auth-service.service';
 
 @Component({
   selector: 'app-ruta-inicio',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ruta-inicio.component.scss']
 })
 export class RutaInicioComponent implements OnInit {
+  usuario = {
+    nombre: '',
+    password: ''
+  };
+  constructor(private readonly _authService: AuthServiceService) { 
 
-  constructor() { }
+  }
 
   ngOnInit() {
+    this.usuario=this._authService.usuario;
+
   }
 
 }
