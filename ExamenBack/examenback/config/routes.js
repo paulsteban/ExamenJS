@@ -20,8 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-
-  'GET /Rol/crearRelaciones': 'RolController.crearRelaciones',
+  'POST /Usuario/login': 'UsuarioController.login',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

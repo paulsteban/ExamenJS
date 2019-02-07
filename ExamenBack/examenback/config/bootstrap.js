@@ -16,15 +16,25 @@ module.exports.bootstrap = async function() {
   // For example:
   // ```
   // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return;
-  // }
+   if (await Rol.count() > 0) {
+     return;
+   }
   //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
+   await Rol.createEach([
+     { nombre: 'Administrador' ,},
+     { nombre: 'Rol', },
   //   // etc.
-  // ]);
-  // ```
+   ]);
+  if (await Usuario.count() > 0) {
+    return;
+  }
+  //
+  await Usuario.createEach([
+    { nombre: 'Paul' , correo: 'paul.cisneros@epn.edu.ec',password: '1234', fechanacimiento: '1995-03-20',},
 
+    //   // etc.
+  ]);
+  // ```
+  await Rol.addToCollection(1, 'usuarios', [1]);
+  await Rol.addToCollection(2, 'usuarios', [2]);
 };
