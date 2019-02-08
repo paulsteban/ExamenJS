@@ -7,6 +7,7 @@ import { RutaGestionUsuarioComponent } from './Rutas/ruta-gestion-usuario/ruta-g
 import { RutaGestionEventosComponent } from './Rutas/ruta-gestion-eventos/ruta-gestion-eventos.component';
 import { RutaUsuarioComponent } from './Rutas/ruta-usuario/ruta-usuario.component';
 import { RutaEventoComponent } from './Rutas/ruta-evento/ruta-evento.component';
+import { RutaCrearEventoComponent } from './Rutas/ruta-crear-evento/ruta-crear-evento.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,11 @@ const routes: Routes = [
     component: RutaGestionEventosComponent,
     // COMPONENTE
     children:[
+      {
+        // menu/gestion-usuarios
+        path: 'gestioneventos/crearevento',
+        component: RutaCrearEventoComponent,
+      },
       {
         // menu/gestion-usuarios
         path: ':idEvento',

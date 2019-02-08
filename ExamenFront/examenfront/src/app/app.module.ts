@@ -24,6 +24,9 @@ import { ActoresComponent } from './Componentes/actores/actores.component';
 import { PeliculasComponent } from './Componentes/peliculas/peliculas.component';
 import {ActorServicio} from "./Servicios/actor-servicio";
 import {PeliculaServicio} from "./Servicios/pelicula-servicio";
+import { RolServicio } from './Servicios/rol-servicio';
+import { RutaCrearEventoComponent } from './Rutas/ruta-crear-evento/ruta-crear-evento.component';
+import { RutaCrearActorComponent } from './Rutas/ruta-crear-actor/ruta-crear-actor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,9 @@ import {PeliculaServicio} from "./Servicios/pelicula-servicio";
     LoginComponenteComponent,
     FormularioUsuarioComponent,
     ActoresComponent,
-    PeliculasComponent
+    PeliculasComponent,
+    RutaCrearEventoComponent,
+    RutaCrearActorComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,7 @@ import {PeliculaServicio} from "./Servicios/pelicula-servicio";
     MessageModule
 
   ],
-  providers: [AuthServiceService,IsLogin,EsAdministrador,UsuarioServicio,EventoServicio,ActorServicio,PeliculaServicio],
+  providers: [AuthServiceService,IsLogin,EsAdministrador,RolServicio,UsuarioServicio,EventoServicio,ActorServicio,PeliculaServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -100,6 +100,5 @@ module.exports.bootstrap = async function() {
   // ```
   await Rol.addToCollection(1, 'usuarios', [1]);
   await Rol.addToCollection(2, 'usuarios', [2]);
-  await Rol.addToCollection(3, 'usuarios', [1,2]);
-  await Rol.addToCollection(4, 'usuarios', [2]);
+
 };

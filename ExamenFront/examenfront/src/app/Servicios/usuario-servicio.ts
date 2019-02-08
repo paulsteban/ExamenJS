@@ -21,7 +21,8 @@ export class UsuarioServicio {
   create(nombre: string,
          correo: string,
          password: string,
-         fechanacimiento: string): Observable<Usuario> {
+         fechanacimiento: string,
+         ): Observable<Usuario> {
 
     const objetoAGuardar = {
       nombre: nombre,
@@ -36,6 +37,39 @@ export class UsuarioServicio {
       .post(url, objetoAGuardar)
       .pipe(map(r => <Usuario> r)); // Castear
   }
+
+  crearRol(idrol: number,idusuario: number,
+    ): Observable<Usuario> {
+
+const objetoAGuardar = {
+  idusuario: idusuario,
+  idrol: idrol,
+ 
+};
+
+
+const url = environment.url + this.nombreModelo + '/crearol';
+
+return this._httpClient
+ .post(url, objetoAGuardar)
+ .pipe(map(r => <Usuario> r)); // Castear
+}
+eliminarrol(idrol: number,idusuario: number,
+  ): Observable<Usuario> {
+
+const objetoAGuardar = {
+idusuario: idusuario,
+idrol: idrol,
+
+};
+
+
+const url = environment.url + this.nombreModelo + '/eliminarrol';
+
+return this._httpClient
+.post(url, objetoAGuardar)
+.pipe(map(r => <Usuario> r)); // Castear
+}
 
   delete(id: number): Observable<Usuario> {
     return this._httpClient

@@ -7,16 +7,18 @@ import { AuthServiceService } from 'src/app/Servicios/auth-service.service';
   styleUrls: ['./ruta-inicio.component.scss']
 })
 export class RutaInicioComponent implements OnInit {
-  usuario = {
+/*  usuario = {
     nombre: '',
     password: ''
-  };
-  constructor(private readonly _authService: AuthServiceService) { 
+  };*/
+  constructor(
+    //private readonly _authService: AuthServiceService
+    ) { 
 
   }
 
   ngOnInit() {
-    this.usuario=this._authService.usuario;
+  //  this.usuario=this._authService.usuario;
 
   }
 

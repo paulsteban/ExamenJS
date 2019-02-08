@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UsuarioServicio} from "../../Servicios/usuario-servicio";
 import {Usuario} from "../../Interfaces/Usuario";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ruta-registro',
@@ -9,7 +10,8 @@ import {Usuario} from "../../Interfaces/Usuario";
 })
 export class RutaRegistroComponent implements OnInit {
 
-  constructor(private readonly _usuarioservicio: UsuarioServicio) { }
+  constructor(private readonly _usuarioservicio: UsuarioServicio,private readonly _router: Router) { }
+
 
   ngOnInit() {
   }
@@ -21,14 +23,29 @@ export class RutaRegistroComponent implements OnInit {
         usuarioObjeto.nombre,
         usuarioObjeto.correo,
         usuarioObjeto.password,
-        "1995-25-01"
+        "1995-25-01",
+        
       );
 
     crearRaza$
       .subscribe(
         (usuario: Usuario) => {
-          console.log('Raza');
-          alert(`Raza creada: ${usuario.nombre}`);
+          console.log('Usuario');
+          alert(`Usuario Creado: ${usuario.nombre}`);
+          const crearRol$ = this._usuarioservicio.crearRol(usuarioObjeto.idrolU,usuario.id);
+          console.log(usuarioObjeto.idrolU);
+          console.log(usuario.id);
+
+          crearRol$
+      .subscribe(
+        (usuario: Usuario) => {
+          console.log('Rolcreado');
+          this._router.navigate(['/inicio']);
+        },
+        (error) => {
+          console.error('Error: ', error);
+        }
+      );
         },
         (error) => {
           console.error('Error: ', error);

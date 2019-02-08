@@ -50,7 +50,7 @@ if((Object.keys(this.usuario).length) > 0){
     let Aux = false;
     
       if(this.islogin()){
-        const helado = this.UsuariosTotales.forEach((valuex)=>{if ((valuex.nombre ===Object.values(this.usuario)[3] && valuex.roles[0].nombre ==="Administrador" )){
+        const helado = this.UsuariosTotales.forEach((valuex)=>{if (valuex.nombre ===Object.values(this.usuario)[3] && valuex.roles[0].nombre ==="Administrador"){
           return Aux = true;
         console.log(1)
         }
@@ -70,5 +70,28 @@ if((Object.keys(this.usuario).length) > 0){
   
     return Aux;
   }
+  esUsuario(): boolean {
+    let Aux = false;
+    
+      if(this.islogin()){
+        const helado = this.UsuariosTotales.forEach((valuex)=>{if (valuex.nombre ===Object.values(this.usuario)[3] && valuex.roles[0].nombre ==="Usuario"){
+          return Aux = true;
+        console.log(1)
+        }
+     
+      });
+
+      }else
+      
+      { 
+        Aux = false
+        console.log(2)
+      
+      }
+
+     
+ 
   
+    return Aux;
+  }
 }

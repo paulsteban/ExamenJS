@@ -19,6 +19,23 @@ export class EventoServicio {
       }));
     return convenios$;
   }
+  create(nombre: string,
+    fecha: string,
+    
+    ): Observable<Evento> {
+
+const objetoAGuardar = {
+ nombre: nombre,
+ fecha: fecha,
+ 
+};
+
+const url = environment.url + this.nombreModelo;
+
+return this._httpClient
+ .post(url, objetoAGuardar)
+ .pipe(map(r => <Evento> r)); // Castear
+}
 
 }
 

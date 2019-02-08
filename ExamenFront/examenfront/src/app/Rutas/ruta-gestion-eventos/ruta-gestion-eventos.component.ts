@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from 'src/app/Servicios/auth-service.service';
-import {UsuarioServicio} from "../../Servicios/usuario-servicio";
 import {NgForm} from "@angular/forms";
 import {Evento} from "../../Interfaces/Evento";
 import {EventoServicio} from "../../Servicios/evento-servicio";
@@ -16,7 +15,8 @@ export class RutaGestionEventosComponent implements OnInit {
   busquedax: Evento[] = [];
   show = true;
   show2 = false;
-  constructor(private readonly _eventosservicio: EventoServicio) { }
+  constructor(private readonly _eventosservicio: EventoServicio,
+    private readonly _authService:AuthServiceService) { }
 
   ngOnInit() {
     const show = true ;
