@@ -22,7 +22,7 @@ module.exports.bootstrap = async function() {
   //
    await Rol.createEach([
      { nombre: 'Administrador' ,},
-     { nombre: 'Rol', },
+     { nombre: 'Usuario', },
   //   // etc.
    ]);
   if (await Usuario.count() > 0) {

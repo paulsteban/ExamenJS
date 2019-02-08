@@ -8,10 +8,12 @@
 <h2>Bienvenido En que puedo ayudarte: </h2>
 <ul>
   <li>
-    <h2><a target="_blank" rel="noopener" [routerLink]="
+    <h2><a [routerLink]="
       ['/login']">Iniciar Sesion</a></h2>
   </li>
   <li>
-    <h2><a target="_blank" rel="noopener" routerLink="/registro">Registrarse</a></h2>
+    <!--- target="_blank" rel="noopener"--->
+    <h2><a rel="noopener" routerLink="/registro">Registrarse</a></h2>
   </li>
-  <router-outlet></router-outlet> 
+  </ul>
+  <router-outlet></router-outlet>

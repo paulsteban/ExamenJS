@@ -16,6 +16,9 @@ import { LoginComponenteComponent } from './Componentes/login-componente/login-c
 import {AuthServiceService} from "./Servicios/auth-service.service";
 import { IsLogin } from './Servicios/Guards/is-login';
 import { EsAdministrador } from './Servicios/Guards/es-administrador';
+import {UsuarioServicio} from "./Servicios/usuario-servicio";
+import { FormularioUsuarioComponent } from './Componentes/formulario-usuario/formulario-usuario.component';
+import {MessageModule, MessagesModule} from "primeng/primeng";
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,17 +29,20 @@ import { EsAdministrador } from './Servicios/Guards/es-administrador';
     RutaGestionEventosComponent,
     RutaEventoComponent,
     RutaInicioComponent,
-    LoginComponenteComponent
+    LoginComponenteComponent,
+    FormularioUsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,  // Acceso a un servicio HttpClient
     FormsModule,
-    TableModule
+    TableModule,
+    MessagesModule,
+    MessageModule
 
   ],
-  providers: [AuthServiceService,IsLogin,EsAdministrador],
+  providers: [AuthServiceService,IsLogin,EsAdministrador,UsuarioServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

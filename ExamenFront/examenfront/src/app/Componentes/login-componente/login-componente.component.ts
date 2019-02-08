@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthServiceService} from "../../Servicios/auth-service.service";
 import {Usuario} from "../../Interfaces/Usuario";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -15,13 +16,14 @@ export class LoginComponenteComponent implements OnInit {
   };
 usuarios = [];
 helado = [];
-  constructor(private readonly _authService: AuthServiceService) { }
+  constructor(private readonly _authService: AuthServiceService,
+              private readonly _router: Router) { }
 
   ngOnInit() {
     this.usuarios = this._authService.obtenertodosUsuarios();
 
-     
-       
+
+
      }
   login() {
 
@@ -38,14 +40,17 @@ helado = [];
 
           console.log(raza);
           console.log(this._authService.usuario)
+          this._router.navigate(['/gestioneventos']);
+
         },
         (error) => {
+          alert('fallo en login');
           console.error(error);
         }
       );
 
   }
 
-  
+
 
 }

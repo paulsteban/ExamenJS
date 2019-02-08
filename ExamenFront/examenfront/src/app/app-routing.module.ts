@@ -35,13 +35,13 @@ const routes: Routes = [
   },{
     // NOMBRE
     path: 'gestionusuarios',
-   
+
     component: RutaGestionUsuarioComponent,
     // COMPONENTE,
     children:[
       {
         // menu/gestion-usuarios
-        path: 'usuario',
+        path: ':usuario',
         component: RutaUsuarioComponent,
       },
 
