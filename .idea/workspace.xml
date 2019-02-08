@@ -23,7 +23,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ruta-evento.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ruta-evento.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExamenFront/examenfront/src/app/Rutas/ruta-evento/ruta-evento.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -31,6 +31,15 @@
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ruta-evento.component.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExamenFront/examenfront/src/app/Rutas/ruta-evento/ruta-evento.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -122,6 +131,7 @@
         <option value="$PROJECT_DIR$/ExamenFront/examenfront/src/app/Rutas/ruta-evento/ruta-evento.component.html" />
         <option value="$PROJECT_DIR$/ExamenFront/examenfront/src/app/Componentes/peliculas/peliculas.component.html" />
         <option value="$PROJECT_DIR$/ExamenFront/examenfront/src/app/Rutas/ruta-evento/ruta-evento.component.ts" />
+        <option value="$PROJECT_DIR$/ExamenFront/examenfront/src/app/Rutas/ruta-evento/ruta-evento.component.scss" />
       </list>
     </option>
   </component>
@@ -291,12 +301,12 @@
       <updated>1549496047525</updated>
       <workItem from="1549496049875" duration="675000" />
       <workItem from="1549496808649" duration="16608000" />
-      <workItem from="1549579104813" duration="30013000" />
+      <workItem from="1549579104813" duration="30066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47296000" />
+    <option name="totallyTimeSpent" value="47349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -329,13 +339,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ExamenFront/examenfront/src/styles.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ExamenFront/examenfront/angular.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -728,6 +731,13 @@
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExamenFront/examenfront/src/app/Rutas/ruta-evento/ruta-evento.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
