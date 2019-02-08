@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from 'src/app/Servicios/auth-service.service';
+import {UsuarioServicio} from "../../Servicios/usuario-servicio";
+import {NgForm} from "@angular/forms";
+import {Evento} from "../../Interfaces/Evento";
+import {EventoServicio} from "../../Servicios/evento-servicio";
 
 @Component({
   selector: 'app-ruta-gestion-eventos',
@@ -7,10 +11,47 @@ import { AuthServiceService } from 'src/app/Servicios/auth-service.service';
   styleUrls: ['./ruta-gestion-eventos.component.scss']
 })
 export class RutaGestionEventosComponent implements OnInit {
-
-  constructor(private readonly _authService: AuthServiceService) { }
+  cols:any [];
+  busqueda: Evento[] = [];
+  busquedax: Evento[] = [];
+  show = true;
+  show2 = false;
+  constructor(private readonly _eventosservicio: EventoServicio) { }
 
   ngOnInit() {
+    const show = true ;
+    this.cols = [
+      { field: 'nombre', header: 'Nombre' },
+      { field: 'fecha', header: 'Fecha'},
+      { field: 'acciones', header: 'Acciones' }
+
+    ];
+    const usuarios$ = this._eventosservicio.findAll();
+    usuarios$.subscribe((eventos: Evento[]) => {
+      this.busqueda=eventos;
+
+      console.log(this.busqueda[0].nombre);
+      console.log(this.busqueda);
+
+    });
+
+
+  }
+
+
+  onClickMe(f: NgForm) {
+    /* const helado=this.usuarios.find((valuex)=>{return valuex.pais==f.value.BrowPais
+    // console.log(valuex.organizacion+"1");
+     //console.log(f.value.BrowOrganizacion+"2")
+   });*/
+    this.show=false;
+    this.show2=true;
+    this.busquedax = [];
+    const helado = this.busqueda.forEach((valuex)=>{if ((valuex.nombre==f.value.BrowEvento)){
+
+      this.busquedax.push(valuex);
+    }
+    });
   }
 
 }

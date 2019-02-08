@@ -1,3 +1,4 @@
   <app-formulario-usuario
-                          [nombreBoton]="'Actualizar'"
-                          ></app-formulario-usuario>
+
+    (formularioValido)="actualizarUsuario($event)"
+  ></app-formulario-usuario>

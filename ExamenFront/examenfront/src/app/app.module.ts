@@ -19,6 +19,11 @@ import { EsAdministrador } from './Servicios/Guards/es-administrador';
 import {UsuarioServicio} from "./Servicios/usuario-servicio";
 import { FormularioUsuarioComponent } from './Componentes/formulario-usuario/formulario-usuario.component';
 import {MessageModule, MessagesModule} from "primeng/primeng";
+import {EventoServicio} from "./Servicios/evento-servicio";
+import { ActoresComponent } from './Componentes/actores/actores.component';
+import { PeliculasComponent } from './Componentes/peliculas/peliculas.component';
+import {ActorServicio} from "./Servicios/actor-servicio";
+import {PeliculaServicio} from "./Servicios/pelicula-servicio";
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +35,9 @@ import {MessageModule, MessagesModule} from "primeng/primeng";
     RutaEventoComponent,
     RutaInicioComponent,
     LoginComponenteComponent,
-    FormularioUsuarioComponent
+    FormularioUsuarioComponent,
+    ActoresComponent,
+    PeliculasComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,7 @@ import {MessageModule, MessagesModule} from "primeng/primeng";
     MessageModule
 
   ],
-  providers: [AuthServiceService,IsLogin,EsAdministrador,UsuarioServicio],
+  providers: [AuthServiceService,IsLogin,EsAdministrador,UsuarioServicio,EventoServicio,ActorServicio,PeliculaServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

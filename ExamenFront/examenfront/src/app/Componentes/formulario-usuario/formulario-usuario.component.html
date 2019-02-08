@@ -12,19 +12,19 @@
 
     </p>
     <label [hidden]="true"
-           for="nombre">Nombre</label>
+           for="nombreU">Nombre</label>
 
     <div class="ui-inputgroup">
-      <input id="nombre"
+      <input id="nombreU"
 
              pInputText
-             placeholder="Nombre"
+             placeholder="NombreU"
 
 
              required
              type="text"
-             name="nombre"
-             [(ngModel)]="nombre"
+             name="nombreU"
+             [(ngModel)]="nombreU"
              #inputNombre="ngModel"
       >
     </div>
@@ -32,31 +32,33 @@
   </div>
 
   <div>
-    <label for="correo">Correo</label>
-    <input id="correo"
-           name="correo"
+    <label for="correoU">Correo</label>
+    <input id="correoU"
+           name="correoU"
            type="text"
-           [(ngModel)]="correo"
+           [(ngModel)]="correoU"
     >
   </div>
   <div>
-    <label for="password">Password</label>
-    <input id="password"
-           name="password"
+    <label for="passwordU">Password</label>
+    <input id="passwordU"
+           name="passwordU"
            type="password"
-           [(ngModel)]="password"
+           [(ngModel)]="passwordU"
     >
   </div>
   <div>
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="BrowRoles">Tipo de Convenio</label>
-  </div>
-  <input class="custom-select" list="browrol" id="BrowRoles" name="BrowRoles" ngModel />
-  <datalist id="browrol" >
-    <option *ngFor="let cbxrol of cbxrols" value=  {{cbxrol}}>
-  </datalist></div>
 
-  <button [disabled]="formularioActualizarRaza.invalid">
-    {{nombreBoton}}
+     <div class="input-group-prepend">
+     <label class="input-group-text" for="BrowRoles">Tipo de Convenio</label>
+   </div>
+
+   <input class="custom-select" list="browrol" id="BrowRoles" name="BrowRoles" ngModel />
+   <datalist id="browrol" >
+     <option *ngFor="let cbxrol of cbxrols" value=  {{cbxrol}}>
+   </datalist></div>
+
+  <button>
+    Enviar Datos
   </button>
 </form>

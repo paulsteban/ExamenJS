@@ -41,7 +41,7 @@ const routes: Routes = [
     children:[
       {
         // menu/gestion-usuarios
-        path: ':usuario',
+        path: ':idUsuario',
         component: RutaUsuarioComponent,
       },
 
@@ -55,7 +55,7 @@ const routes: Routes = [
     children:[
       {
         // menu/gestion-usuarios
-        path: 'evento',
+        path: ':idEvento',
         component: RutaEventoComponent,
       },
 

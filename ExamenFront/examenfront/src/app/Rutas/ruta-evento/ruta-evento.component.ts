@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ActorServicio} from "../../Servicios/actor-servicio";
+import {Actor} from "../../Interfaces/Actor";
+import {Pelicula} from "../../Interfaces/Pelicula";
+import {PeliculaServicio} from "../../Servicios/pelicula-servicio";
+
 
 @Component({
   selector: 'app-ruta-evento',
@@ -6,10 +11,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ruta-evento.component.scss']
 })
 export class RutaEventoComponent implements OnInit {
-
-  constructor() { }
+  imagenes:Actor[]= [];
+  imagenes2:Pelicula[]= [];
+  constructor(private readonly _actorservicio: ActorServicio,
+              private readonly _peliculaservicio: PeliculaServicio) { }
 
   ngOnInit() {
+    const actor$ = this._actorservicio.findAll();
+    actor$.subscribe((actor: Actor[]) => {
+      this.imagenes=actor;
+    });
+    const pelicula$ = this._peliculaservicio.findAll();
+    pelicula$.subscribe((pelicula: Pelicula[]) => {
+      this.imagenes2=pelicula;
+    });
+
   }
+
 
 }
