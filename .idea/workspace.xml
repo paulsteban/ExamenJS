@@ -301,16 +301,15 @@
       <updated>1549496047525</updated>
       <workItem from="1549496049875" duration="675000" />
       <workItem from="1549496808649" duration="16608000" />
-      <workItem from="1549579104813" duration="30066000" />
+      <workItem from="1549579104813" duration="30187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47349000" />
+    <option name="totallyTimeSpent" value="47470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32985657" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20625" />
