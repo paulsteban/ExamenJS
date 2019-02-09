@@ -44,14 +44,16 @@ export class RutaGestionEventosComponent implements OnInit {
     // console.log(valuex.organizacion+"1");
      //console.log(f.value.BrowOrganizacion+"2")
    });*/
-    this.show=false;
-    this.show2=true;
-    this.busquedax = [];
-    const helado = this.busqueda.forEach((valuex)=>{if ((valuex.nombre==f.value.BrowEvento)){
+    if ((f.value.BrowEvento)) {
+      this.show = false;
+      this.show2 = true;
+      this.busquedax = [];
+      const helado = this.busqueda.forEach((valuex) => {
+        if ((valuex.nombre == f.value.BrowEvento)) {
 
-      this.busquedax.push(valuex);
+          this.busquedax.push(valuex);
+        }
+      });
     }
-    });
   }
-
 }

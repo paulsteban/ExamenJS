@@ -27,7 +27,7 @@ module.exports = {
 
   crearol: async (req, res) => {
     const parametros = req.allParams();
-    
+
     var usuarioRol = await Usuario.find({
       id: parametros.idusuario,
     });
@@ -38,14 +38,14 @@ module.exports = {
     } else {
       return res.badRequest({mensaje: 'Usuario No consta en la base'});
     }
-   
+
 
 
 
   },
   eliminarrol: async (req, res) => {
     const parametros = req.allParams();
-    
+
     var usuarioRol = await Usuario.find({
       id: parametros.idusuario,
     });
@@ -56,10 +56,6 @@ module.exports = {
     } else {
       return res.badRequest({mensaje: 'Usuario No consta en la base'});
     }
-    
-
-
-
   }
 };
 

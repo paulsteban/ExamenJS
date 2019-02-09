@@ -4,12 +4,12 @@
   ></app-formulario-usuario>
   <div>
 
-      <p>Eliminar Roles</p> 
+      <p>Eliminar Roles</p>
 
 <div *ngFor="let rol of roles" >
 
-  <button (click)="onClickMe(rol.id)">
-    {{rol.nombre}} 
+  <button (click)="onClickMe(rol.id)" *ngIf='auxboton'>
+    {{rol.nombre}}
   </button>
 </div>
 

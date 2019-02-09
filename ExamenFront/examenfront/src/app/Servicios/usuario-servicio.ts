@@ -44,7 +44,7 @@ export class UsuarioServicio {
 const objetoAGuardar = {
   idusuario: idusuario,
   idrol: idrol,
- 
+
 };
 
 
@@ -82,6 +82,21 @@ return this._httpClient
 
     return this._httpClient
       .get(url)
+      .pipe(map(r => <Usuario> r)); // Castear
+  }
+  findOneByRolId(id: number | string
+
+  ): Observable<Usuario> {
+
+    const objetoAGuardar = {
+      idusuario: id,
+
+    };
+
+    const url = environment.url + this.nombreModelo + '/buscarRol';
+
+    return this._httpClient
+      .post(url, objetoAGuardar)
       .pipe(map(r => <Usuario> r)); // Castear
   }
 

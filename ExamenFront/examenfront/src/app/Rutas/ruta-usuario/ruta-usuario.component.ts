@@ -11,24 +11,40 @@ import { RolServicio } from 'src/app/Servicios/rol-servicio';
   styleUrls: ['./ruta-usuario.component.scss']
 })
 export class RutaUsuarioComponent implements OnInit {
+  auxboton = true;
   UsuarioAActualizar: Usuario;
-  roles = [{nombre:"Administrador", id:1}, {nombre:"Usuario",id:2}]
+ // roles = [{nombre:"Administrador", id:1}, {nombre:"Usuario",id:2}]
+  roles : any= [];
   constructor(private readonly _activatedRoute: ActivatedRoute,
               private readonly _usuarioservicio: UsuarioServicio,
               private readonly _rolservicio: RolServicio,
               private readonly _router: Router) { }
 
   ngOnInit() {
-    const usuarios$ = this._usuarioservicio.findAll();
-    usuarios$.subscribe((usuarios: Usuario[]) => {
-  console.log(usuarios);
-      let roles= this._rolservicio.buscarRoles(usuarios);
-      console.log(this._rolservicio.buscarRoles(usuarios));
-    });
-
-
-
     const rutaActiva$ = this._activatedRoute.params;
+/*
+    const usuariosx$ = this._usuarioservicio.findAll();
+    usuariosx$.subscribe((usuariosx: Usuario[]) => {
+      const usuariosrolx = usuariosx
+        .forEach(
+          (usario) => {
+            usario
+              .roles
+              .forEach(
+                (rol) => {
+                  this.roles.push({
+                    nombre: rol.nombre
+                  });
+                }
+              );
+          }
+        );
+
+    });*/
+
+
+
+
 
     rutaActiva$
       .subscribe(
@@ -40,6 +56,16 @@ export class RutaUsuarioComponent implements OnInit {
             .subscribe(
               (usuario: Usuario) => {
                 this.UsuarioAActualizar = usuario;
+                const usuariosrolx = usuario.roles
+                        .forEach(
+                          (rol) => {
+                            this.roles.push({
+                              nombre: rol.nombre,
+                              id: rol.id
+                            });
+                          }
+                        );
+
               },
               (error) => {
                 console.error('Error: ', error);
@@ -64,15 +90,14 @@ export class RutaUsuarioComponent implements OnInit {
       );
   }
   onClickMe(id:number) {
-    console.log(id);
     console.log(this.UsuarioAActualizar.id);
     const eliminarRol$ = this._usuarioservicio.eliminarrol(id,this.UsuarioAActualizar.id);
     eliminarRol$
     .subscribe(
       (usuario: Usuario) => {
         console.log('Roeliminado');
-        
-    
+        alert('Rol eliminado para el Usuario' + usuario.nombre);
+        this.auxboton = false;
       },
       (error) => {
         console.error('Error: ', error);
@@ -81,7 +106,7 @@ export class RutaUsuarioComponent implements OnInit {
   }
 
   actualizarUsuario(objetoUsuario) {
-   
+
     objetoUsuario.id = this.UsuarioAActualizar.id;
 
     const razaActualizada$ = this._usuarioservicio
@@ -98,8 +123,8 @@ export class RutaUsuarioComponent implements OnInit {
       .subscribe(
         (usuario: Usuario) => {
           console.log('Rolcreado');
-          
-      
+
+
         },
         (error) => {
           console.error('Error: ', error);
