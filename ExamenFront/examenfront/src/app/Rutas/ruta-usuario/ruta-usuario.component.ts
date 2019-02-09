@@ -11,7 +11,6 @@ import { RolServicio } from 'src/app/Servicios/rol-servicio';
   styleUrls: ['./ruta-usuario.component.scss']
 })
 export class RutaUsuarioComponent implements OnInit {
-  auxboton = true;
   UsuarioAActualizar: Usuario;
  // roles = [{nombre:"Administrador", id:1}, {nombre:"Usuario",id:2}]
   roles : any= [];
@@ -55,14 +54,17 @@ export class RutaUsuarioComponent implements OnInit {
           raza$
             .subscribe(
               (usuario: Usuario) => {
+                this.roles = [];
                 this.UsuarioAActualizar = usuario;
                 const usuariosrolx = usuario.roles
                         .forEach(
                           (rol) => {
+
                             this.roles.push({
                               nombre: rol.nombre,
                               id: rol.id
                             });
+
                           }
                         );
 
@@ -97,7 +99,8 @@ export class RutaUsuarioComponent implements OnInit {
       (usuario: Usuario) => {
         console.log('Roeliminado');
         alert('Rol eliminado para el Usuario' + usuario.nombre);
-        this.auxboton = false;
+        const url = ['/gestionusuarios'];
+        this._router.navigate(url);
       },
       (error) => {
         console.error('Error: ', error);

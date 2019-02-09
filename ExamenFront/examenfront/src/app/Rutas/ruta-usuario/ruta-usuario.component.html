@@ -7,10 +7,11 @@
       <p>Eliminar Roles</p>
 
 <div *ngFor="let rol of roles" >
-
-  <button (click)="onClickMe(rol.id)" *ngIf='auxboton'>
+  <button (click)="onClickMe(rol.id)" >
     {{rol.nombre}}
   </button>
+
 </div>
+
 
   </div>
