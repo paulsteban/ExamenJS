@@ -11,6 +11,30 @@
         text="Error: El nombre es requerido"></p-message>
 
     </p>
+    <p *ngIf="inputPassword.errors">
+
+        <p-message
+          *ngIf="inputPassword.errors.required"
+          severity="warn"
+          text="Error: El password es requerido"></p-message>
+  
+      </p>
+      <p *ngIf="inputCorreo.errors">
+
+          <p-message
+            *ngIf="inputCorreo.errors.required"
+            severity="warn"
+            text="Error: El correo es requerido"></p-message>
+            <p-message
+            *ngIf="inputCorreo.errors.email"
+            severity="warn"
+            text="Error: Ingrese un correo valido"></p-message>
+    
+        </p>
+        
+    
+        
+      
     <label [hidden]="true"
            for="nombreU">Nombre</label>
 
@@ -36,7 +60,9 @@
     <input id="correoU"
            name="correoU"
            type="text"
+           required
            [(ngModel)]="correoU"
+           #inputCorreo="ngModel"
     >
   </div>
   <div>
@@ -44,7 +70,9 @@
     <input id="passwordU"
            name="passwordU"
            type="password"
+           required
            [(ngModel)]="passwordU"
+           #inputPassword="ngModel"
     >
   </div>
   <div>
